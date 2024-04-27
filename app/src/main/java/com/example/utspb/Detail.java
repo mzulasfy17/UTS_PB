@@ -82,8 +82,6 @@ public class Detail extends AppCompatActivity {
                             textView6.setText(locate);
                             textView7.setText(company);
                             Picasso.get().load(foto).into(imageView);
-                        }else {
-                            Toast.makeText(Detail.this, "Failed to get user data", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }

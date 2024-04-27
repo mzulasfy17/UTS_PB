@@ -23,14 +23,19 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ReviewAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this)); // Tambahkan ini untuk menambahkan layout manager
 
         ApiService apiService = ApiConfig.getApiService();
+
+
+        ApiService apiServic = ApiConfig.getApiService();
         Call<GitHubSearchResponse> call = apiService.searchUsers("Zul");
 
         call.enqueue(new Callback<GitHubSearchResponse>() {
